@@ -15,5 +15,5 @@ test_id=$4
 source /home/ardhipoetra/git/eth/gik/go-ethereum/_scripts/source_export
 gvm use go1.9.3
 
-/home/ardhipoetra/git/eth/gik/go-ethereum/_scripts/run_node.sh $node_id nomine $log_dir&
-echo $nodeId":"$! >> pid_file
+/home/ardhipoetra/git/eth/gik/go-ethereum/_scripts/run_node.sh $node_id $log_dir nomine $ipc_dir
+echo $node_id":"$! >> pid_file

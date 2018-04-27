@@ -9,7 +9,7 @@ other_vars=`echo $other_vars | sed 's/working_dir=[a-zA-Z0-9\/\-]*//'`
 other_vars=`echo $other_vars | sed 's/ipc_dir=[a-zA-Z0-9\/\-]*//'`
 other_vars=`echo $other_vars | sed 's/num_node=[0-9]*//'`
 
-# prepare scm files
+# prepare eth files
 rm -r $working_dir/* 2> /dev/null
 mkdir -p $working_dir
 cp $scriptdir/*.sh  $working_dir/
