@@ -37,13 +37,16 @@
         </fileset>
     </path>
 
-    <target name="download-ivy" unless="skip.download">
+    <target name="download-ivy" unless="offline">
         <mkdir dir="${ivy.jar.dir}" />
         <!--
         download Ivy from web site so that it can be used even without any special installation
         -->
         <echo message="installing ivy..." />
-        <get src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar" dest="${ivy.jar.file}" usetimestamp="true" />
+        <!--
+            ardhi: uncomment below to actually download it
+        -->
+        <!--<get src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar" dest="${ivy.jar.file}" usetimestamp="true" />-->
     </target>
 
     <target name="install-ivy" depends="download-ivy" description="--> install ivy">
