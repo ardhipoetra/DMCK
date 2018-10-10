@@ -12,8 +12,14 @@ log_dir=$2
 node_id=$3
 test_id=$4
 
-source /home/ardhipoetra/git/eth/gik/go-ethereum/_scripts/source_export
-gvm use go1.9.3
+ismine="mine"
 
-/home/ardhipoetra/git/eth/gik/go-ethereum/_scripts/run_node.sh $node_id $log_dir nomine $ipc_dir
-echo $node_id":"$! >> pid_file
+/home/ardhipoetra/git/eth/gik/src/github.com/ethereum/go-ethereum/_scripts/source_export
+#gvm use go1.9.3
+
+if [ $node_id -gt 0 ]; then
+   ismine="nomine"
+fi
+
+pid=`/home/ardhipoetra/git/eth/gik/src/github.com/ethereum/go-ethereum/_scripts/run_node.sh $node_id $log_dir $ismine $ipc_dir`
+echo $node_id":"$pid >> pid_file

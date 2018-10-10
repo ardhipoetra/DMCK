@@ -12,6 +12,7 @@ do
 	arrLine=(${line//:/ })
 	if [ ${arrLine[0]} -eq $nodeId ]; then
 		kill -SIGINT ${arrLine[1]}
+		echo "Killed ${arrLine[1]} $nodeId"
 		sed -i "/$line/d" pid_file
 	fi
 done < pid_file
