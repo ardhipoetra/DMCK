@@ -196,6 +196,8 @@ public class DMCKRunner {
         } else if (dmck.hasNoMoreInterestingPath()) {
           LOG.info("There is no more interesting Initial Paths. Finished exploring all states.");
           break;
+        } else {
+          LOG.info("DMCK continue running.");
         }
 
         // pause DMCK exploration if developer request to pause path explorations after

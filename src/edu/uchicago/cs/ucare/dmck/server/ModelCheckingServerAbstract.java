@@ -21,6 +21,8 @@ import java.util.ListIterator;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+
+import edu.uchicago.cs.ucare.dmck.eth.ETHWorkloadDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import edu.uchicago.cs.ucare.dmck.event.Event;
@@ -284,6 +286,9 @@ public abstract class ModelCheckingServerAbstract implements ModelCheckingServer
       if (DMCK_NAME.equals("raftModelChecker")) {
         executeRaftSnapshot();
       }
+//      else if (DMCK_NAME.equals("ethChecker")) {
+//        ((ETHWorkloadDriver) workloadDriver).startWorkloadMid();
+//      }
     }
   }
 
